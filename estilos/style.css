@@ -31,22 +31,247 @@ header {
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
+  position: sticky;
+  top: 0; 
+  z-index: 1;
 }
 
 header > nav > ul {
   list-style: none;
   display: flex;
-  gap: 10px;
 }
 
 header > nav > ul > li > a {
-  color: var(--texto-inverso);
+  color: var(--texto-inverso); 
+  padding: 13px 15px;
   margin-right: 10px;
-  padding: 10px 10px;
 }
 
 header > nav > ul > li > a:hover {
   background-color: var(--destaque-inverso);
   color: var(--destaque);
+  border-radius: 5px;
+}
+
+/***************** FIM DO CABEÇALHO *****************/
+
+body {
+  background-color: var(--fundo-principal);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  line-height: 1.5em;
+}
+
+.apresentacao {
+  display: flex;
+  flex-direction: column;
+}
+
+.apresentacao > .introducao {
+  background-color: var(--fundo-card);
+  margin: 10px 20px 20px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   border-radius: 8px;
+  gap: 10px;
+}
+
+.apresentacao > .introducao > img {
+  object-fit: cover;
+  width: 210px; 
+  height: 210px;
+  border-radius: 300px;
+  margin-top: 25px;
+  outline: var(--destaque) solid 5px; 
+  border: var(--fundo-card) solid 5px;
+} 
+
+.apresentacao > .introducao > h2 {
+  color: var(--destaque);
+  font-size: 1.5em;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  margin-right: 65px;
+}
+
+.apresentacao > .introducao > p {
+  width: 90%;
+}
+.apresentacao > .introducao > #redes-sociais {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  font-size: 1.6em; 
+  margin-bottom: 20px;
+  margin-top: 5px;
+}
+
+.apresentacao > .introducao > #redes-sociais > a {
+  color: var(--destaque);
+}
+
+.apresentacao > .introducao > #titulo-video {
+  color: var(--destaque);
+  text-align: center;
+  width: 330px;
+  margin-top: 30px;
+  font-size: 1.5em;
+  margin-left: 50px;
+}
+
+.apresentacao > .introducao > #video {
+  position: relative;
+  width: 100%;
+  margin: auto;
+  aspect-ratio: 16/9;
+}
+
+.apresentacao > .introducao > #video > iframe {
+  position: absolute;
+  top: 5px;
+  left: 20px;
+  width: 90%;
+  height: 90%;
+  border-radius: 8px;
+}
+
+.perfil-profissional > .skills {
+  background-color: var(--fundo-card);
+  margin: 10px 20px 20px 20px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 8px;
+  gap: 20px;  
+  height: 520px;
+}
+
+.perfil-profissional > .skills > h2 {
+  color: var(--destaque);
+  font-size: 1.5em;
+  margin-top: 40px;
+  text-align: start;
+  margin-left: 19px;
+}
+
+.perfil-profissional > .skills > .barra-progresso {
+  margin-bottom: 10px;
+}
+
+.perfil-profissional > .skills > .barra-progresso > .info {
+  margin-left: 20px;
+  display: flex;
+  justify-content: space-between; 
+  margin-right: 20px;
+}
+
+.perfil-profissional > .skills > .barra-progresso > .info > span {
+  color: var(--destaque);
+  font-weight: bold;
+}
+
+.perfil-profissional > .skills > .barra-progresso > .barra {
+  width: 89%;
+  height: 8px;
+  background-color: var(--fundo-principal);
+  border-radius: 4px;
+  margin-left: 20px;
+}
+
+.perfil-profissional > .skills > .barra-progresso > .barra > .progresso {
+  width: 90%;
+  background-color: var(--destaque-inverso);
+  height: 8px;
+  border-radius: 4px;
+}
+
+.perfil-profissional > .formacao {
+  background-color: var(--fundo-card);
+  margin: 10px 20px 20px 20px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 8px;
+  gap: 20px;
+  padding-bottom: 15px;
+}
+
+.perfil-profissional > .formacao > h2 {
+  color: var(--destaque);
+  font-size: 1.5em;
+  margin-top: 40px;
+  text-align: start;
+  margin-left: 19px;
+}
+
+.perfil-profissional > .formacao > .info-geral {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 20px;
+}
+
+.perfil-profissional > .formacao > .info-geral > .info-formacao {
+  background-color: var(--fundo-principal);
+  margin: auto;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 10px;
+  border-radius: 8px;
+  border-left: 5px solid var(--destaque-inverso);
+  cursor: pointer;
+  transition: border-width 0.5s, border-color 0.5s;
+}
+
+.perfil-profissional > .formacao > .info-geral > .info-formacao:hover {
+  border-left-width: 15px;
+  border-color: var(--destaque);
+  transition: border-width 0.5s, border-color 0.5s;
+}
+
+.perfil-profissional > .formacao > .info-geral> .info-formacao > span {
+  font-weight: bold;
+  font-size: 0.8em;
+}
+
+.perfil-profissional > .formacao > .info-geral > .info-formacao > h4 {
+  color: var(--destaque-inverso);
+  font-size: 1.1em;
+  width: 300px;
+}
+
+.perfil-profissional > .projetos {
+  background-color: var(--fundo-card);
+  margin: 10px 20px 20px 20px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 8px;
+  gap: 20px;
+  padding-bottom: 15px;
+}
+
+.perfil-profissional > .projetos > h2 {
+  color: var(--destaque);
+  font-size: 1.5em;
+  margin-top: 40px;
+  text-align: start;
+  margin-left: 19px;
+}
+
+.perfil-profissional > .projetos > .info-projetos {
+  background-color: var(--fundo-principal);
+  margin: auto;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 10px;
+  border-radius: 8px;
+  border-left: 5px solid var(--destaque-inverso);
+  cursor: pointer;
+  transition: border-width 0.5s, border-color 0.5s;
 }
