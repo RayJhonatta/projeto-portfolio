@@ -59,7 +59,6 @@ body {
   background-color: var(--fundo-principal);
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   line-height: 1.5em;
-  margin-right: 50px;
 }
 
 .apresentacao {
@@ -330,10 +329,3 @@ footer > p > a:hover {
 }
 
 /************* FIM DO RODAPÉ *************/
-
-
-@media screen and (max-width: 768px) {
-  
-
-  
-}
