@@ -66,12 +66,9 @@ body.escuro {
 
 body {
   background-color: var(--fundo-principal);
+  color: var(--texto);
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   line-height: 1.5em;
-}
-
-main {
-  display: grid;
 }
 
 .apresentacao {
@@ -354,7 +351,11 @@ footer > p > a:hover {
 
 @media (max-width: 484px) {
     header {
-      width: 469px;
+      width: 495px;
+    }
+
+    main {
+      width: 500px;
     }
 
     footer { 
@@ -393,9 +394,13 @@ footer > p > a:hover {
 
 @media (min-width: 992px) {
 
+  header {
+    width: 113vw;
+  }
+
   main {
     display: grid;
-    grid-template-columns: auto 900px 1fr auto;
+    grid-template-columns: 400px 750px;
   }
 
   .apresentacao > .introducao {
@@ -413,7 +418,19 @@ footer > p > a:hover {
       grid-template-columns: 1fr 1fr;
     }
 
+    .perfil-profissional > #formacao > .info-geral > .info-formacao:nth-child(1) {
+      height: 26vh;
+    }
+
     .perfil-profissional > #projetos > .info-geral {
       grid-template-columns: 1fr 1fr;
+    }
+
+    .perfil-profissional > #projetos > .info-geral > .info-projetos:nth-child(3) {
+      height: 62vh;
+    }
+
+    footer {
+      width: 112vw;
     }
 }
