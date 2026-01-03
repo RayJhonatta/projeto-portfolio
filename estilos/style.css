@@ -55,10 +55,23 @@ header > nav > ul > li > a:hover {
 
 /***************** FIM DO CABEÇALHO *****************/
 
+body.escuro {
+  --fundo-principal: #222222;
+  --texto: #e0e0e0;
+  --texto-inverso: #333333;
+  --destaque: #ff5522;
+  --destaque-inverso: #a73917;
+  --fundo-card: #444444;
+}
+
 body {
   background-color: var(--fundo-principal);
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   line-height: 1.5em;
+}
+
+main {
+  display: grid;
 }
 
 .apresentacao {
@@ -89,10 +102,10 @@ body {
 
 .apresentacao > .introducao > h2 {
   color: var(--destaque);
-  font-size: 1.5em;
-  margin-bottom: 5px;
-  margin-top: 5px;
-  margin-right: 65px;
+  font-size: 1.5em; 
+  margin: 10px 0;
+  text-align: left;
+  width: 90%;
 }
 
 .apresentacao > .introducao > p {
@@ -112,23 +125,33 @@ body {
   color: var(--destaque);
 }
 
-.apresentacao > .introducao > #titulo-video {
+.intro > .introducao-video {
+  background-color: var(--fundo-card);
+  margin: 10px 20px 20px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 8px;
+  gap: 10px;
+}
+
+.intro > .introducao-video > #titulo-video {
   color: var(--destaque);
   text-align: center;
   width: 330px;
   margin-top: 30px;
-  font-size: 1.5em;
-  margin-left: 50px;
+  font-size: 1.5em; 
 }
 
-.apresentacao > .introducao > #video {
+.intro > .introducao-video > #video {
   position: relative;
   width: 100%;
   margin: auto;
   aspect-ratio: 16/9;
 }
 
-.apresentacao > .introducao > #video > iframe {
+.intro > .introducao-video > #video > iframe {
   position: absolute;
   top: 5px;
   left: 20px;
@@ -140,20 +163,20 @@ body {
 .perfil-profissional > #skills {
   background-color: var(--fundo-card);
   margin: 10px 20px 20px 20px;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr; 
   border-radius: 8px;
   gap: 20px;  
-  height: 520px;
+  padding-bottom: 20px;  
 }
 
 .perfil-profissional > #skills > h2 {
   color: var(--destaque);
   font-size: 1.5em;
   margin-top: 40px;
-  text-align: start;
+  padding-bottom: 5px;
   margin-left: 19px;
+  grid-column: 1 / -1;  
 }
 
 .perfil-profissional > #skills > .barra-progresso {
@@ -190,25 +213,24 @@ body {
 .perfil-profissional > #formacao {
   background-color: var(--fundo-card);
   margin: 10px 20px 20px 20px;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr; 
   border-radius: 8px;
   gap: 20px;
-  padding-bottom: 15px;
+  padding-bottom: 20px;
 }
 
 .perfil-profissional > #formacao > h2 {
   color: var(--destaque);
   font-size: 1.5em;
   margin-top: 40px;
-  text-align: start;
   margin-left: 19px;
+  grid-column: 1 / -1;  
 }
 
 .perfil-profissional > #formacao > .info-geral {
-  display: flex;
-  flex-direction: column-reverse;
+  display: grid;
+  grid-template-columns: 1fr; 
   gap: 20px;
 }
 
@@ -246,9 +268,8 @@ body {
 .perfil-profissional > #projetos {
   background-color: var(--fundo-card);
   margin: 10px 20px 20px 20px;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr; 
   border-radius: 8px;
   gap: 20px;
   padding-bottom: 15px;
@@ -263,8 +284,8 @@ body {
 }
 
 .perfil-profissional > #projetos > .info-geral {
-  display: flex;
-  flex-direction: column-reverse;
+  display: grid;
+  grid-template-columns: 1fr; 
   gap: 20px;
 }
 
@@ -272,8 +293,8 @@ body {
   background-color: var(--fundo-principal);
   margin: auto;
   width: 90%;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr; 
   gap: 20px;
   padding: 10px;
   border-radius: 8px;
@@ -329,3 +350,70 @@ footer > p > a:hover {
 }
 
 /************* FIM DO RODAPÉ *************/
+
+
+@media (max-width: 484px) {
+    header {
+      width: 469px;
+    }
+
+    footer { 
+      width: 469px;
+    }
+}
+
+/* Estilos para telas maiores que 768px */
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+    main {
+      display: grid;
+      grid-template-columns: auto 470px 1fr auto;
+    }
+
+    .apresentacao {
+      display: grid;
+    }
+
+    .apresentacao > .introducao {
+      grid-column: 1 / 2;
+      height: fit-content;
+      position: sticky;
+      top: 100px;
+    }
+
+    .intro {
+      grid-column: 2 / 3;
+    }
+
+    .intro > .perfil-profissional > #skills {
+      grid-template-columns: 1fr 1fr;
+    }
+    
+}
+
+@media (min-width: 992px) {
+
+  main {
+    display: grid;
+    grid-template-columns: auto 900px 1fr auto;
+  }
+
+  .apresentacao > .introducao {
+    grid-column: 1 / 2;
+    height: fit-content;
+    position: sticky;
+    top: 100px;
+  }
+
+    .intro > .perfil-profissional > #skills {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .perfil-profissional > #formacao > .info-geral {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .perfil-profissional > #projetos > .info-geral {
+      grid-template-columns: 1fr 1fr;
+    }
+}
