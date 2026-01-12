@@ -333,7 +333,7 @@ footer {
   color: var(--texto-inverso);
   text-align: center;
   padding: 15px;  
-  margin: 8px;
+  margin: 15px;
 }
 
 footer > p > a {
@@ -395,12 +395,13 @@ footer > p > a:hover {
 @media (min-width: 992px) {
 
   header {
-    width: 113vw;
+    width: 100%;
+    margin: 0;
   }
 
   main {
     display: grid;
-    grid-template-columns: 400px 750px;
+    grid-template-columns: 400px 995px; 
   }
 
   .apresentacao > .introducao {
@@ -410,27 +411,31 @@ footer > p > a:hover {
     top: 100px;
   }
 
-    .intro > .perfil-profissional > #skills {
-      grid-template-columns: 1fr 1fr 1fr;
-    }
+  .intro > .introducao-video > #video > iframe {
+    margin-left: 30px;
+  }
 
-    .perfil-profissional > #formacao > .info-geral {
-      grid-template-columns: 1fr 1fr;
-    }
+  .intro > .perfil-profissional > #skills {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 
-    .perfil-profissional > #formacao > .info-geral > .info-formacao:nth-child(1) {
-      height: 26vh;
-    }
+  .perfil-profissional > #formacao > .info-geral {
+    grid-template-columns: 1fr 1fr;
+  }
 
-    .perfil-profissional > #projetos > .info-geral {
-      grid-template-columns: 1fr 1fr;
-    }
+  .perfil-profissional > #formacao > .info-geral > .info-formacao:nth-child(1) {
+    height: 20vh;
+  }
 
-    .perfil-profissional > #projetos > .info-geral > .info-projetos:nth-child(3) {
-      height: 62vh;
-    }
+  .perfil-profissional > #projetos > .info-geral {
+    grid-template-columns: 1fr 1fr;
+  }
 
-    footer {
-      width: 112vw;
-    }
+  .perfil-profissional > #projetos > .info-geral > .info-projetos:nth-child(3) {
+    height: 60vh;
+  }
+
+  footer {
+    width: 98%; 
+  }
 }
